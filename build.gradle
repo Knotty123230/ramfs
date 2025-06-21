@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'com'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+
+jar {
+    manifest {
+        attributes(
+//                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class' : "com.ramfs.RamFileSystem"
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
