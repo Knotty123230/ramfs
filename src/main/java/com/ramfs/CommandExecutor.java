@@ -17,6 +17,7 @@ public class CommandExecutor {
             case "cd" -> new CdCommand(args);
             case "mkdir" -> new MkdirCommand(args);
             case "clear" -> new ClearCommand();
+            case "exit" -> new ExitCommand();
             default -> null;
         };
     }
